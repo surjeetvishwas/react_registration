@@ -81,6 +81,13 @@ const RegistrationForm = () => {
       console.log("Form contains errors");
     }
   };
+  const handleFocus = (e) => {
+    e.target.parentElement.classList.add("input-focused");
+  };
+
+  const handleBlur = (e) => {
+    e.target.parentElement.classList.remove("input-focused");
+  };
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
@@ -89,6 +96,8 @@ const RegistrationForm = () => {
         name="fullName"
         value={formData.fullName}
         onChange={handleChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         placeholder="Full Name"
         required
       />
@@ -99,6 +108,8 @@ const RegistrationForm = () => {
         name="email"
         value={formData.email}
         onChange={handleChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         placeholder="Email"
         required
       />
@@ -109,6 +120,8 @@ const RegistrationForm = () => {
         name="contactNumber"
         value={formData.contactNumber}
         onChange={handleChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         placeholder="Contact Number"
         required
       />
@@ -118,6 +131,8 @@ const RegistrationForm = () => {
         name="bio"
         value={formData.bio}
         onChange={handleChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         placeholder="Bio"
         required
       />
