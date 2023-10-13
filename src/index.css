@@ -1,12 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  
 }
 
 .App{
-  margin-top: 20px
+  padding-top: 20px;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,94,121,0.9249124820826768) 35%, rgba(0,212,255,1) 100%);
   
+  background-size: cover;
+
+font-family: 'Poppins', sans-serif;
+height: inherit;
 }
 
 .form-container{
@@ -15,12 +24,13 @@
   align-items: center;
   
   max-width: 500px;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 20px;
-  background-color: #8bd6fc;
+  background-color: rgba(248, 248, 248, 0.5);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .form-container > input,
 .form-container > textarea
 {
@@ -29,6 +39,37 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.form-container > .input-container {
+  position: relative;
+}
+
+.form-container > .input-container::before,
+.form-container > .input-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: tomato;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.form-container > .input-container::before {
+  transform-origin: bottom right;
+}
+
+.form-container > .input-container::after {
+  transform-origin: bottom left;
+}
+
+.form-container > .input-focused::before,
+.form-container > .input-focused::after {
+  transform: scaleX(1);
 }
 
 .form-container > button{
@@ -55,11 +96,12 @@
 .registered-users-list {
   
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #f8f8f8;
+  background-color: rgba(248, 248, 248, 0.5);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding-bottom: 20px;
 }
 
 .registered-users-list ul {
@@ -111,7 +153,7 @@
   transition: 0.5s all;
 }
 .registered-users-list th {
-  background-color: #f2f2f2;
+  background-color: rgba(248, 248, 248, 0.5);
 }
 
 .registered-users-list th:first-child,
